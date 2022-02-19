@@ -6,6 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# with leak fixes in singleshot callbacks
+fltk = { git = "https://github.com/mosolovsa/fltk-rs", rev = "7be022d5bbb4de7303b589a67d2dc9ed15b9e506" }
 
-[build-dependencies]
-cc = "1.0"
+# without leak fixes in singleshot callbacks
+#fltk = { git = "https://github.com/mosolovsa/fltk-rs", rev = "7e605ef118db59d65e610bb10c7763d424a32d8d" }
+
+# forked with print each allocator op to stdout with ptr and size
+stats_alloc = { git = "https://github.com/mosolovsa/stats_alloc" }
